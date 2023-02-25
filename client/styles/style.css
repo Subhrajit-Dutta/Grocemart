@@ -109,9 +109,10 @@ main{
 }
 
 .back-animation:nth-child(3){
-	top: 35rem;
+	top: 0;
+	right: 0;
 	border-radius: 30% 40% 88% 12%;
-	animation: move 2s alternate infinite;
+/*	animation: move 2s alternate infinite;*/
 	opacity: 0.4;
 	z-index: 97;
 }
@@ -240,7 +241,7 @@ section{
 	box-shadow: 0px 2px 8px 0px #c7c7c7;
 	transition: 0.15 ease-in-out;
 	cursor: pointer;
-	transition: 0.3s ease-in-out;
+	transition: 0.1s ease-in-out;
 }
 
 .category:hover{
@@ -566,6 +567,7 @@ section{
 	border-radius: 1rem;
 	z-index: 99;
 	color: #696969;
+	position: relative;
 }
 
 .sm{

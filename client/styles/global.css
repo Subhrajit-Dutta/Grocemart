@@ -177,7 +177,7 @@ nav > div{
 	display: flex;
 	flex-direction: column;
 	top: 2.5rem;
-	left: -8rem;
+	left: -12.45rem;
 	height: 14rem;
 	width: 16rem;
 	background-color: var(--primary-color);
@@ -224,6 +224,7 @@ nav > div{
 	color: #ebebeb;
 	outline: none;
 	border: none;
+	cursor: pointer;
 }
 
 .profile-card button[type="button"]:hover{
@@ -238,6 +239,7 @@ nav > div{
 }
 
 #hamberger-icon{
+	cursor: pointer;
 	background-color: transparent;
 	border: none;
 	font-size: 1.5rem;

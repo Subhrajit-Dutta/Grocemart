@@ -23,7 +23,7 @@
 
     			<div id="name"><h1></h1></div>
 
-    			<div id="location"><i style="color: red;" class="fa-solid fa-location-dot"></i> Kolkata</div>
+    			<div id="location"><i style="color: red;" class="fa-solid fa-location-dot"></i> <span id="up-city">Kolkata</span></div>
 
     		</div>
 
@@ -31,8 +31,47 @@
     	</div>
 
     	<div id="navbox">
-    		<button id="navboxes">Edit Profile</button>
+    		<button class="navboxes navcolor">My Orders</button>
+    		<button class="navboxes">Edit Profile</button>
     	</div>
+
+    	<div class="box show" id="myOrders">
+    		<h1>MY ORDERS</h1>
+    		<div id="order-body">
+
+                <div class="product">
+                <div class="product-image"> <img src="images/apple-min.png"></div>
+                <div class="product-description">
+                    <p class="name">Example Name</p>
+                    <p class="quantity">Qty: 1</p>
+                    <p class="price">40 Rs.</p>
+               </div>
+            </div>
+
+            <div class="line"></div>
+
+
+            <div class="product">
+                <div class="product-image"> <img src="images/tomato2-min.png"></div>
+                <div class="product-description">
+                    <p class="name">Example Name</p>
+                    <p class="quantity">Qty: 1</p>
+                    <p class="price">40 Rs.</p>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="product">
+                <div class="product-image"> <img src="images/broccoli-min.png"></div>
+                <div class="product-description">
+                    <p class="name">Example Name</p>
+                    <p class="quantity">Qty: 1</p>
+                    <p class="price">40 Rs.</p>
+                </div>
+            </div>
+    	</div>
+    </div>
 
     	<div class="box" id="editProducts">
     		<form>
