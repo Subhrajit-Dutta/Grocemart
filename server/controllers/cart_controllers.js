@@ -1,43 +1,50 @@
-const asyncHandler= require('express-async-handler');
-const User=require("../models/ConsumerModel");
-const Cart= require("../models/cartmodel");
-const Product=require("../models/productmodel");
+const asyncHandler = require('express-async-handler');
+const User = require('../models/ConsumerModel');
+const Cart = require('../models/cartmodel');
+const Product = require('../models/productmodel');
 
-const addToCart = asyncHandler(async(req,res) => {
-  const { user, items } = req.body;
-  let userExists = await User.findOne({ _id: user });
-  if(userExists){
-       
+const addToCart = asyncHandler(async(req, res) => {
+  const { username, productName, quantity,price } = req.body;
+  console.log(req.body)
+  const user = await User.findOne({ username });
+  if (!user) {
+    res.status(404);
+    throw new Error('User not found');
   }
 
-  if (!cartModel) {
-    cartModel = new Cart({ user: userId, items: [] });
+  const product = await Product.findOne({  name:productName });
+  if (!product) {
+    res.status(404);
+    throw new Error('Product not found');
   }
 
-  const cartItem = cartModel.items.find(item => item.productId.toString() === productId);
-
-  if (cartItem) {
-    cartItem.quantity += quantity;
-    cartItem.price += quantity * cartItem.price;
+  const cart = await Cart.findOne({ user: user._id });
+  if (!cart) {
+    const newCart = new Cart({
+      user: user._id,
+      items: [{
+        productName: product.name,
+        quantity,
+        price: product.price
+      }]
+    });
+    await newCart.save();
+    res.status(200).json({ message: 'Cart created' });
   } else {
-    const product = await Product.findOne({ _id: productId });
-
-    if (product) {
-      cartModel.items.push({
-        productId: product._id,
+    const cartItem = cart.items.find(item => item.productName === product.name);
+    if (cartItem) {
+      cartItem.quantity += quantity;
+      cartItem.price += quantity * product.price;
+    } else {
+      cart.items.push({
+        productName: product.name,
         quantity,
         price: product.price
       });
-    } else {
-      res.status(400);
-      throw new Error("Product not found");
     }
+    await cart.save();
+    res.status(200).json({ message: 'Cart updated' });
   }
-
-  await cartModel.save();
-
-  res.status(200).json({ message: "Cart Updated" });
 });
 
 module.exports = { addToCart };
-exports.addToCart = addToCart;

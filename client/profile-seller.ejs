@@ -51,7 +51,7 @@
                 <img src="images/apple-min.png">
                 <div class="card-body">
                 <div class="name">Example Name</div>
-                <div class="description"><p>Lorem ipsumid est laborum.</p></div>
+                <div class="image"><p>Lorem ipsumid est laborum.</p></div>
                 <div class="rating">5.0 <i class="fa-solid fa-star"></i></div>
                 <div class="price">Remove</div>
                 <div class="add2cart">Edit Product</div>
@@ -61,7 +61,7 @@
                 <img src="images/tomato2-min.png">
                 <div class="card-body">
                 <div class="name">Example Name</div>
-                <div class="description"><p>Lorem ipsumid est laborum.</p></div>
+                <div class="image"><p>Lorem ipsumid est laborum.</p></div>
                 <div class="rating">5.0 <i class="fa-solid fa-star"></i></div>
                 <div class="price">Remove</div>
                 <div class="add2cart">Edit Product</div>
@@ -71,7 +71,7 @@
                 <img src="images/broccoli-min.png">
                 <div class="card-body">
                 <div class="name">Example Name</div>
-                <div class="description"><p>Lorem ipsumid est laborum.</p></div>
+                <div class="image"><p>Lorem ipsumid est laborum.</p></div>
                 <div class="rating">5.0 <i class="fa-solid fa-star"></i></div>
                 <div class="price">Remove</div>
                 <div class="add2cart">Edit Product</div>
@@ -81,45 +81,29 @@
     	</div>
 
     	<div class="box" id="upload">
-    		<form id="upload-product" method="post" action="/api/seller/upload">
-                <h1>UPLOAD PRODUCT</h1>
-                <div class="inputs">
-                    <label for="name">Name of Product</label><br>
-                    <input type="text" name="name" id="name" required>
-                </div>
-
-                <div class="inputs">
-    		        <label for="description">Description</label><br>
-    		        <input type="text" name="description" id="description" required>
-    		    </div>
-
-                <div class="inputs">
-    		        <label for="price">Price</label><br>
-    		        <input type="number" name="price" id="price" required>
-    		    </div>
-
-                <div class="inputs">
-    		        <label for="image">Image</label><br>
-    		        <input type="text" name="image" id="image" required>
-    		    </div>
-
-
-                <!-- <div class="inputs" id="location-input">
-                    <label for="city" id="citylabel">Location : </label><br>
-                    <input type="text" name="city" id="city" disabled required>
-                    <div id="arrow-downBox">
-                        <div id="detect">
-                            <i class="fa-solid fa-location-crosshairs" style="color: red !important;"></i>
-                            <p>Detect Your Current Location</p>
-                        </div>
-                        <p>Using GPS</p>
-                    </div>
-                </div> -->
-
-                <div class="inputs" id="upload-btn">
-                    <button type="submit">Upload</button>
-               </div>
-            </form>
+			<h1>UPLOAD PRODUCT</h1>
+    		<div id="inputs">
+				<form method="post" action="/api/seller/upload" id="upload-product-form">
+	
+				  <label for = "name" id="name-label"> Name </label> <br>
+				  <input type="text" name="name" id="name"><br>
+		
+		
+				  <label for = "image" id="image-label"> Description </label> <br>
+				  <input type="text" name="image" required id="image"><br>
+		
+				  <label for = "price" id="price-label"> Price </label> <br>
+				  <input class="price" type="number" name="price" required id="price"><br>
+				  <!-- <i class="show fa-solid fa-eye"></i>
+				  <i class="hide fa-solid fa-eye-slash"></i> -->
+				  <label for = "image" id="image-label"> Image </label> <br>
+				  <input type="text" name="image" id="image"><br>
+		
+				  <button class="sub-btn" type="submit" id="submit" >Upload</button>
+				  </div>
+	
+				  </form>
+	
             <img src="images/upload.png" height="750px" width="750px">
     	</div>
 
@@ -137,13 +121,13 @@
     		    </div>
 
     		    <div class="inputs">
-    		        <label for="email-edit">Email</label><br>
-    		        <input type="email" name="email" id="email-edit">
+    		        <label for="image-edit">Email</label><br>
+    		        <input type="image" name="image" id="image-edit">
     		    </div>
 
     		    <div class="inputs">
-    		        <label for="password">Change Password</label><br>
-    		        <input type="password" name="password" id="password">
+    		        <label for="price">Change Password</label><br>
+    		        <input type="price" name="price" id="price">
     		    </div>
 
     		    <div class="inputs">

@@ -103,7 +103,7 @@ if(localStorage.getItem('city') != null){
 }
 
 //upload product   
-const form= document.getElementById('upload-product')
+const form= document.getElementById('upload-product-form')
 form.addEventListener('submit',function(event){
     event.preventDefault()
     const formData = new FormData(form)
@@ -111,15 +111,15 @@ form.addEventListener('submit',function(event){
     const description=formData.get('description')
     const price = formData.get('price')
     const image = formData.get('image')
-    const user = {
+    const product = {
         name,
         description,
         price,
-        image
+        image,
     }
     fetch('/api/seller/upload', {
         method: 'POST',
-        body: JSON.stringify(user),
+        body: JSON.stringify(product),
         headers: {
             'content-type': 'application/json'
         }
