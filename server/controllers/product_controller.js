@@ -35,4 +35,4 @@ const createProduct = asyncHandler(async (req, res) => {
 });
 
 module.exports = { getProducts, getProductById, createProduct };
-exports.createProduct=createProduct
+

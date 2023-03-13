@@ -41,6 +41,9 @@ app.get('/order-confirmation', (req, res) => {
 app.get('/checkout', (req, res) => {
     res.render(path.join(__dirname, '../client', 'checkout.ejs'));
 });
+app.get('/product-file', (req, res) => {
+    res.render(path.join(__dirname, '../client', 'product-file.ejs'));
+});
 //Register user
 app.use('/api/consumer',userRoutes)
 //add to cart
