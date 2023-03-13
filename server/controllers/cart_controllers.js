@@ -4,24 +4,23 @@ const Cart = require('../models/cartmodel');
 const Product = require('../models/productmodel');
 
 const addToCart = asyncHandler(async(req, res) => {
-  const { username, productName, quantity,price } = req.body;
-  console.log(req.body)
+  const { username, productName, quantity, price } = req.body;
   const user = await User.findOne({ username });
   if (!user) {
     res.status(404);
     throw new Error('User not found');
   }
 
-  const product = await Product.findOne({  name:productName });
+  const product = await Product.findOne({ name: productName });
   if (!product) {
     res.status(404);
     throw new Error('Product not found');
   }
 
-  const cart = await Cart.findOne({ user: user._id });
+  const cart = await Cart.findOne({ username });
   if (!cart) {
     const newCart = new Cart({
-      user: user._id,
+      username,
       items: [{
         productName: product.name,
         quantity,
